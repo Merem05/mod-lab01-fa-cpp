@@ -1,5 +1,6 @@
 // Copyright 2022 UNN-IASR
 #include "fun.h"
+#include <cctype>
 
 unsigned int faStr1(const char* str) {
     if (str == nullptr) return 0;
@@ -15,8 +16,7 @@ unsigned int faStr1(const char* str) {
             }
             inWord = false;
             badWord = false;
-        }
-        else {
+        } else {
             if (!inWord) {
                 inWord = true;
             }
@@ -46,18 +46,15 @@ unsigned int faStr2(const char* str) {
                 count++;
             }
             inWord = false;
-        }
-        else {
+        } else {
             if (!inWord) {
                 if (isupper(str[i])) {
                     goodWord = true;
-                }
-                else {
+                } else {
                     goodWord = false;
                 }
                 inWord = true;
-            }
-            else {
+            } else {
                 if (!islower(str[i])) {
                     goodWord = false;
                 }
@@ -87,13 +84,11 @@ unsigned int faStr3(const char* str) {
                 totalLength += currentLength;
                 inWord = false;
             }
-        }
-        else {
+        } else {
             if (!inWord) {
                 inWord = true;
                 currentLength = 1;
-            }
-            else {
+            } else {
                 currentLength++;
             }
         }
